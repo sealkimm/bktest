@@ -63,23 +63,23 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: './src/pages/about.html',
-      filename: 'bktest/about.html',
+      filename: 'about.html',
     }),
     new HtmlWebpackPlugin({
       template: './src/pages/brands.html',
-      filename: 'bktest/brands.html',
+      filename: 'brands.html',
     }),
     new HtmlWebpackPlugin({
       template: './src/pages/franchise.html',
-      filename: 'bktest/franchise.html',
+      filename: 'franchise.html',
     }),
     new HtmlWebpackPlugin({
       template: './src/pages/contact.html',
-      filename: 'bktest/contact.html',
+      filename: 'contact.html',
     }),
     new HtmlWebpackPlugin({
       template: './src/pages/brand.html',
-      filename: 'bktest/brand.html',
+      filename: 'brand.html',
     }),
     new StylelintPlugin({
       files: './src/scss/**/*.scss',
