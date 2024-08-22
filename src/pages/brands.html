@@ -34,4 +34,23 @@
 		</section>
 	</div>
 </div>
+
+<script>
+	// gsap
+	gsap.set('.brands-pg .brands-item', { opacity: 0, y: 100 });
+	gsap.to('.brands-pg .title', {
+		'--before-width': 'calc(50% - 165px)',
+		opacity: 1,
+		duration: 0.5,
+	});
+	gsap.to('.brands-pg .brands-item', {
+		stagger: {
+			amount: 0.25,
+			from: 'left',
+		},
+		opacity: 1,
+		y: 0,
+		delay: 0.5,
+	});
+</script>
 {% endblock %}

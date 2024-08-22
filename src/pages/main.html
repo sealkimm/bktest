@@ -79,8 +79,8 @@
 			</div>
 		</div>
 		<div class="circle">
-			<span>01</span>
-			<span>03</span>
+			<span class="curr"></span>
+			<span class="total">03</span>
 		</div>
 	</section>
 
@@ -95,7 +95,7 @@
 			<div class="inner">
 				<div class="line"></div>
 				<article>
-					<div class="brand-wrap">
+					<div class="brand-wrap first">
 						<p class="brand">부엌간</p>
 						<ul class="menu-list">
 							<li>
@@ -155,7 +155,7 @@
 					</div>
 					<div class="brand-wrap third">
 						<p class="brand">카페 드 부엌</p>
-						<div class="text"><span>메뉴 준비 중입니다 :&#41;</span></div>
+						<div class="menu-list text"><span>메뉴 준비 중입니다 :&#41;</span></div>
 					</div>
 				</article>
 				<a href="/bktest/brands.html" class="more-link"><span>View More</span></a>
@@ -324,76 +324,156 @@
 </main>
 
 <script>
-	const mainStoreLeftSwiper = new Swiper('.sc-store .col-left .col-left-swiper', {
-		loop: true,
-		slidesPerView: 'auto',
-		speed: 6000,
-		allowTouchMove: false,
-		spaceBetween: 30,
-		autoplay: {
-			delay: 1,
-		},
-		breakpoints: {
-			768: {
-				direction: 'vertical',
-				spaceBetween: 40,
+	document.addEventListener('DOMContentLoaded', () => {
+		const mainStoreLeftSwiper = new Swiper('.sc-store .col-left .col-left-swiper', {
+			loop: true,
+			slidesPerView: 'auto',
+			speed: 6000,
+			allowTouchMove: false,
+			spaceBetween: 30,
+			autoplay: {
+				delay: 1,
 			},
-		},
+			breakpoints: {
+				768: {
+					direction: 'vertical',
+					spaceBetween: 40,
+				},
+			},
+		});
+
+		const mainStoreRightSwiper = new Swiper('.sc-store .col-right .col-right-swiper', {
+			loop: true,
+			slidesPerView: 'auto',
+			speed: 6000,
+			allowTouchMove: false,
+			spaceBetween: 30,
+			autoplay: {
+				delay: 1,
+				reverseDirection: true,
+			},
+			breakpoints: {
+				768: {
+					direction: 'vertical',
+					spaceBetween: 40,
+				},
+			},
+		});
 	});
 
-	const mainStoreRightSwiper = new Swiper('.sc-store .col-right .col-right-swiper', {
-		loop: true,
-		slidesPerView: 'auto',
-		speed: 6000,
-		allowTouchMove: false,
-		spaceBetween: 30,
-		autoplay: {
-			delay: 1,
-			reverseDirection: true,
-		},
-		breakpoints: {
-			768: {
-				direction: 'vertical',
-				spaceBetween: 40,
-			},
+	// gsap ->
+
+	// sc-about
+	gsap.set('.sc-about .title', { opacity: 0, y: 100 });
+	gsap.set('.sc-about .desc', { opacity: 0, x: -100 });
+	gsap.set('.sc-about .img-group', { opacity: 0, x: 100 });
+	const mainAboutAni = gsap.timeline({
+		scrollTrigger: {
+			trigger: '.sc-about',
+			start: 'top center',
+			end: '50% center',
+			scrub: 5,
 		},
 	});
+	mainAboutAni
+		.to('.sc-about .title', { opacity: 1, y: 0 })
+		.addLabel('a')
+		.to('.sc-about .desc', { opacity: 1, x: 0, duration: 1.5 }, 'a+=.7')
+		.to('.sc-about .img-group', { opacity: 1, x: 0, duration: 1.5 }, 'a+=.7');
 
-	// 스크롤 모션
-	// gsap.set('.sc-brands .brands-group.b2 .img-area', { y: '100%' });
-	// gsap.set('.sc-brands .brands-group.b3 .img-area', { y: '100%' });
-	// const scBrandsTextArea1 = document.querySelector('.sc-brands .brands-group.b1 .text-area');
-	// const scBrandsTextArea2 = document.querySelector('.sc-brands .brands-group.b2 .text-area');
-	// const scBrandsTextArea3 = document.querySelector('.sc-brands .brands-group.b3 .text-area');
+	// sc-brands
+	gsap.set('.sc-brands .text-area .title', { opacity: 0, y: 100 });
+	gsap.set('.sc-brands .text-area .wrap', { opacity: 0, y: 100 });
+	gsap.set('.sc-brands .text-area .more-link', { opacity: 0 });
 
-	// const scBrandsAni = gsap.timeline({
-	// 	scrollTrigger: {
-	// 		trigger: '.sc-brands',
-	// 		start: '0% top',
-	// 		end: '900% top',
-	// 		scrub: 1,
-	// 		pin: true,
-	// 		markers: true,
-	// 		onUpdate: (trigger) => {
-	// 			// 현재 스크롤 위치가 애니메이션의 0.5(중간)보다 클 때
-	// 			if (trigger.progress > 0) {
-	// 				scBrandsTextArea1.classList.add('ani');
-	// 			}
-	// 			if (trigger.progress > 0.35) {
-	// 				scBrandsTextArea2.classList.add('ani');
-	// 			}
-	// 			if (trigger.progress > 0.7) {
-	// 				scBrandsTextArea3.classList.add('ani');
-	// 			}
-	// 		},
-	// 	},
-	// });
-	// scBrandsAni
-	// 	.addLabel('a')
-	// 	.to('.sc-brands .brands-group.b2 .img-area', { y: 0, duration: 0.1 }, 'a+=.02')
-	// 	.to('.sc-brands .brands-group.b2 .text-area', { backgroundColor: 'rgba(251,248,240,1)', duration: 0.08 }, 'a-=.02')
-	// 	.addLabel('b')
-	// 	.to('.sc-brands .brands-group.b3 .img-area', { y: 0, duration: 0.1 }, 'b+=.02')
-	// 	.to('.sc-brands .brands-group.b3 .text-area', { backgroundColor: 'rgba(251,248,240,1)', duration: 0.08 }, 'b-=.02');
+	gsap.set('.sc-brands .brands-group.b2 .img-area, .sc-brands .brands-group.b3 .img-area', { y: '100%' });
+
+	const mainBrandsAni = gsap.timeline({
+		scrollTrigger: {
+			trigger: '.sc-brands',
+			start: 'top 0%',
+			end: '600% 100%',
+			markers: true,
+			scrub: 3,
+			pin: true,
+		},
+	});
+	mainBrandsAni
+		.to({}, { duration: 1 })
+		.addLabel('a')
+		.to('.sc-brands .brands-group.b1 .text-area .title', { opacity: 1, y: 0, duration: 1 }, 'a')
+		.to('.sc-brands .brands-group.b1 .text-area .wrap', { opacity: 1, y: 0, duration: 1 }, 'a+=.03')
+		.to('.sc-brands .brands-group.b1 .text-area .more-link', { opacity: 1, duration: 1 }, 'a+=.03')
+
+		.to({}, { duration: 1 })
+		.addLabel('b')
+		.to('.sc-brands .brands-group.b2', { zIndex: 13 }, 'b')
+		.to('.sc-brands .brands-group.b1 .text-area', { opacity: 0, duration: 0.6 }, 'b+=.3')
+		.to('.sc-brands .brands-group.b2 .img-area', { y: 0, duration: 1 }, 'b+=.8')
+
+		.to({}, { duration: 1 })
+		.addLabel('c')
+		.to('.sc-brands .brands-group.b2 .text-area .title', { opacity: 1, y: 0, duration: 1 }, 'c')
+		.to('.sc-brands .brands-group.b2 .text-area .wrap', { opacity: 1, y: 0, duration: 1 }, 'c+=.03')
+		.to('.sc-brands .brands-group.b2 .text-area .more-link', { opacity: 1, duration: 1 }, 'c+=.03')
+
+		.to({}, { duration: 1 })
+		.addLabel('d')
+		.to('.sc-brands .brands-group.b3', { zIndex: 15 }, 'b')
+		.to('.sc-brands .brands-group.b2 .text-area', { opacity: 0, duration: 0.6 }, 'd+=.3')
+		.to('.sc-brands .brands-group.b3 .img-area', { y: 0, duration: 1 }, 'd+=.8')
+
+		.to({}, { duration: 1 })
+		.addLabel('e')
+		.to('.sc-brands .brands-group.b3 .text-area .title', { opacity: 1, y: 0, duration: 1 }, 'e')
+		.to('.sc-brands .brands-group.b3 .text-area .wrap', { opacity: 1, y: 0, duration: 1 }, 'e+=.03')
+		.to('.sc-brands .brands-group.b3 .text-area .more-link', { opacity: 1, duration: 1 }, 'e+=.03')
+		.to({}, { duration: 1 });
+
+	// sc-menu
+	gsap.set('.sc-menu .title', { opacity: 0, x: 100 });
+	gsap.set('.sc-menu .desc', { opacity: 0, x: 100 });
+	gsap.set('.sc-menu .brand', { opacity: 0, y: 100 });
+	gsap.set('.sc-menu .menu-list', { opacity: 0, y: 100 });
+
+	const mainMenuAni = gsap.timeline({
+		scrollTrigger: {
+			trigger: '.sc-menu',
+			start: 'top center',
+			end: '50% center',
+			scrub: 5,
+		},
+	});
+	mainMenuAni
+		.addLabel('a')
+		.to('.sc-menu .title', { opacity: 1, x: 0, duration: 0.4 }, 'a')
+		.to('.sc-menu .desc', { opacity: 1, x: 0, duration: 0.4 }, 'a+=.03')
+		.addLabel('b')
+		.to('.sc-menu .first .brand', { opacity: 1, y: 0 }, 'b')
+		.to('.sc-menu .first .menu-list', { opacity: 1, y: 0 }, 'b')
+		.addLabel('c')
+		.to('.sc-menu .second .brand', { opacity: 1, y: 0 }, 'c')
+		.to('.sc-menu .second .menu-list', { opacity: 1, y: 0 }, 'c')
+		.addLabel('d')
+		.to('.sc-menu .third .brand', { opacity: 1, y: 0 }, 'd')
+		.to('.sc-menu .third .text', { opacity: 1, y: 0 }, 'd');
+
+	// sc-contact
+	gsap.set('.sc-contact .contact, .sc-contact .contact-link', { opacity: 0 });
+	gsap.set('.sc-contact .desc, .sc-contact .title', { opacity: 0, y: 50 });
+
+	const mainContactAni = gsap.timeline({
+		scrollTrigger: {
+			trigger: '.sc-contact',
+			start: 'top center',
+			end: '40% center',
+			scrub: 5,
+		},
+	});
+	mainContactAni
+		.to('.sc-contact .contact', { opacity: 1 })
+		.to('.sc-contact .desc', { opacity: 1, y: 0 })
+		.to('.sc-contact .title', { opacity: 1, y: 0 })
+		.to('.sc-contact .contact-link', { opacity: 1 });
 </script>
 {% endblock %}

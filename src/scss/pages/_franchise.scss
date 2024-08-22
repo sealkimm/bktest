@@ -51,7 +51,7 @@
 			gap: 28px;
 			grid-template-columns: repeat(4,1fr);
 
-			li {
+			.process-item {
 				position: relative;
 				display: flex;
 				flex-direction: column;
@@ -123,7 +123,7 @@
 			.process-list {
 				gap: pxToVw3(90px);
 				grid-template-columns: repeat(1,1fr);
-				li {
+				.process-item {
 					gap: pxToVw3(14px);
 					padding: pxToVw3(50px) 0;
 					@include size(100%, auto);

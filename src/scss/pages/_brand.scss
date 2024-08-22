@@ -29,12 +29,11 @@
 				gap: 70px;
 				&::after {
 					display: block;
+					width: var(--before-width,0%);
+					height: 1px;
 					background-color: $black-color;
 					content: '';
-					@include size(100%, 1px);
-				}
-				&::before {
-					display: none;
+					// @include size(100%, 1px);
 				}
 			}
 		}
@@ -140,13 +139,6 @@
 			}
 		}
 		&.b2 {
-			.title-group {
-				.title {
-					&::after {
-						@include size(69.3%, 1px);
-					}
-				}
-			}
 			.cont-group {
 				.menu-swiper {
 					.swiper-slide {

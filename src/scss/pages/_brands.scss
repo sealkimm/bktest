@@ -7,27 +7,32 @@
 		margin: 0 auto;
 	}
 	.sc-brands {
-		// sc- 바꾸기, brands-group 이런것도
 		position: relative;
 		.title-group {
 			@include textPadding();
 			.title {
 				display: flex;
+				justify-content: center;
 				align-items: center;
 				font-size: 45px;
 				font-weight: 600;
-				text-align: center;
-				gap: 70px;
+				opacity: 0;
 
 				&::before,
 				&::after {
+					position: absolute;
 					display: block;
+					width: var(--before-width,0%);
+					height: 1px;
 					background-color: $black-color;
+					transform: translateY(-50%);
 					content: '';
-					@include size(100%, 1px);
+				}
+				&::before {
+					left: calc(50% + 165px);
 				}
 				&::after {
-					right: 0;
+					right: calc(50% + 165px);
 				}
 			}
 		}
