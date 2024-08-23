@@ -1,16 +1,18 @@
 {% set pageInfo = { 'section': 'main', 'title': '', 'order': '0' } %} {% extends "layout.html" %} {% block content %}
 <main class="main">
 	<section class="sc-main">
-		<img src="../img/main/main_visual.webp" alt="메인비주얼 이미지" />
-		<div class="overlay"><span class="blind">오버레이 박스</span></div>
-		<div class="title-wrap">
-			<div class="img">
-				<img src="../img/main/main_visual_logo.png" alt="비유유케이 로고" />
+		<div class="inner">
+			<img src="../img/main/main_visual.webp" alt="메인비주얼 이미지" />
+			<div class="overlay"><span class="blind">오버레이 박스</span></div>
+			<div class="title-wrap">
+				<div class="img">
+					<img src="../img/main/main_visual_logo.png" alt="비유유케이 로고" />
+				</div>
+				<p class="txt">
+					세계의 맛을 담은 <span></span> 유러피안 F&B, BUUK<br />
+					평온하고 품격있는 외식업 문화를 선도하는 <strong>BUUK</strong>와 함께 <strong>성공적인 <span></span> 창업의 길</strong>을 열어보세요.
+				</p>
 			</div>
-			<p class="txt">
-				세계의 맛을 담은 <span></span> 유러피안 F&B, BUUK<br />
-				평온하고 품격있는 외식업 문화를 선도하는 <strong>BUUK</strong>와 함께 <strong>성공적인 <span></span> 창업의 길</strong>을 열어보세요.
-			</p>
 		</div>
 	</section>
 
@@ -42,7 +44,8 @@
 				<h3 class="title">Our Brands</h3>
 				<article class="wrap">
 					<div class="brand">부엌간</div>
-					<p class="desc">“My Favorite European Restaurant” 이라는 슬로건을 기반으로<br class="mob-br" />운영하는 유러피안 레스토랑 ‘부엌간’입니다.</p>
+					<!-- <p class="desc">“My Favorite European Restaurant” 이라는 슬로건을 기반으로<br class="mob-br" />운영하는 유러피안 레스토랑 ‘부엌간’입니다.</p> -->
+					<p class="desc">“My Favorite European Restaurant” 이라는 슬로건을 기반으로 운영하는 유러피안 레스토랑 ‘부엌간’입니다.</p>
 				</article>
 				<a href="/bktest/brand.html?brand=b1" class="more-link"><span>View More</span></a>
 			</div>
@@ -69,7 +72,8 @@
 				<article class="wrap">
 					<div class="brand">카페 드 부엌</div>
 					<p class="desc">
-						카페 드 부엌은 단순한 유럽 감성이 아닌 디테일한 유러피안 감성을 담아내,<br class="mob-br" />방문하시는 고객님들께 공간적 가치와 커피의 즐거움을 선사합니다.
+						<!-- 카페 드 부엌은 단순한 유럽 감성이 아닌 디테일한 유러피안 감성을 담아내,<br class="mob-br">방문하시는 고객님들께 공간적 가치와 커피의 즐거움을 선사합니다. -->
+						카페 드 부엌은 단순한 유럽 감성이 아닌 디테일한 유러피안 감성을 담아내, 방문하시는 고객님들께 공간적 가치와 커피의 즐거움을 선사합니다.
 					</p>
 				</article>
 				<a href="/bktest/brand.html?brand=b3" class="more-link"><span>View More</span></a>
@@ -79,8 +83,8 @@
 			</div>
 		</div>
 		<div class="circle">
-			<span class="curr"></span>
-			<span class="total">03</span>
+			<div class="curr">0<span class="num">1</span></div>
+			<div class="total">03</div>
 		</div>
 	</section>
 
@@ -363,6 +367,19 @@
 
 	// gsap ->
 
+	// loadingAni
+	gsap.set('.sc-main .inner', { width: '20vw', height: '20vw', borderRadius: '50%', y: '50vw' });
+	gsap.set('.sc-main .inner .overlay', { opacity: 0 });
+	gsap.set('.sc-main .inner .title-wrap', { opacity: 0 });
+
+	const mainLoadingAni = gsap.timeline();
+	mainLoadingAni
+		.to('.sc-main .inner', { y: 0, duration: 1, ease: 'power3.out' })
+		.addLabel('a')
+		// .to('.sc-main .inner > img', { objectPosition: 'center' }, 'a')
+		.to('.sc-main .inner', { width: '100%', height: '100%', borderRadius: 0, duration: 1.5, ease: 'power3.out' }, 'a')
+		.to('.sc-main .overlay', { opacity: 0.7 });
+
 	// sc-about
 	gsap.set('.sc-about .title', { opacity: 0, y: 100 });
 	gsap.set('.sc-about .desc', { opacity: 0, x: -100 });
@@ -370,16 +387,16 @@
 	const mainAboutAni = gsap.timeline({
 		scrollTrigger: {
 			trigger: '.sc-about',
-			start: 'top center',
-			end: '50% center',
+			start: 'top 60%',
+			end: '50% 60%',
 			scrub: 5,
 		},
 	});
 	mainAboutAni
 		.to('.sc-about .title', { opacity: 1, y: 0 })
 		.addLabel('a')
-		.to('.sc-about .desc', { opacity: 1, x: 0, duration: 1.5 }, 'a+=.7')
-		.to('.sc-about .img-group', { opacity: 1, x: 0, duration: 1.5 }, 'a+=.7');
+		.to('.sc-about .desc', { opacity: 1, x: 0, duration: 1.5 }, 'a+=.5')
+		.to('.sc-about .img-group', { opacity: 1, x: 0, duration: 1.5 }, 'a+=.5');
 
 	// sc-brands
 	gsap.set('.sc-brands .text-area .title', { opacity: 0, y: 100 });
@@ -393,7 +410,6 @@
 			trigger: '.sc-brands',
 			start: 'top 0%',
 			end: '600% 100%',
-			markers: true,
 			scrub: 3,
 			pin: true,
 		},
@@ -410,6 +426,7 @@
 		.to('.sc-brands .brands-group.b2', { zIndex: 13 }, 'b')
 		.to('.sc-brands .brands-group.b1 .text-area', { opacity: 0, duration: 0.6 }, 'b+=.3')
 		.to('.sc-brands .brands-group.b2 .img-area', { y: 0, duration: 1 }, 'b+=.8')
+		.to('.sc-brands .circle .num', { textContent: '2', duration: 0 }, 'b+=.5')
 
 		.to({}, { duration: 1 })
 		.addLabel('c')
@@ -419,9 +436,10 @@
 
 		.to({}, { duration: 1 })
 		.addLabel('d')
-		.to('.sc-brands .brands-group.b3', { zIndex: 15 }, 'b')
+		.to('.sc-brands .brands-group.b3', { zIndex: 15 }, 'd')
 		.to('.sc-brands .brands-group.b2 .text-area', { opacity: 0, duration: 0.6 }, 'd+=.3')
 		.to('.sc-brands .brands-group.b3 .img-area', { y: 0, duration: 1 }, 'd+=.8')
+		.to('.sc-brands .circle .num', { textContent: '3', duration: 0 }, 'd+=.5')
 
 		.to({}, { duration: 1 })
 		.addLabel('e')

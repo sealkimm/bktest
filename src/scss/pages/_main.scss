@@ -29,6 +29,18 @@
 .main {
 	.sc-main {
 		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+		.inner {
+			overflow: hidden;
+			height: 100%;
+			> img {
+				height: 100%;
+				object-position: right;
+			}
+		}
 		.overlay {
 			@include size(100%, 100%);
 			position: absolute;
@@ -41,7 +53,7 @@
 		}
 		.title-wrap {
 			position: absolute;
-			top: calc(50% + 100px);
+			top: calc(50% + 50px);
 			left: 50%;
 			display: flex;
 			flex-direction: column;
@@ -58,13 +70,6 @@
 				font-size: 28px;
 				span {
 					display: none;
-				}
-			}
-			@include tab-only {
-				.img {
-					// @include size(pxToVw(400px), pxToVw(93px));
-					// width: pxToVw(400px);
-					// height: pxToVw(93px);
 				}
 			}
 		}
@@ -163,7 +168,8 @@
 						margin-bottom: 20px;
 					}
 					.desc {
-						font-size: 24px;
+						padding: 0 110px;
+						font-size: 20px;
 					}
 				}
 				.more-link {
@@ -237,10 +243,6 @@
 				padding: 0 12px 8px;
 				color: #fff;
 				border-bottom: 1px solid #fff;
-				// &::after {
-				// 	content: var(--after-content, '01');
-				// 	display: block;
-				// }
 			}
 			.total {
 				color: #777;
