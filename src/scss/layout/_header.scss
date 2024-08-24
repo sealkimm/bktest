@@ -10,7 +10,7 @@
 		width: 100%;
 		height: 100px;
 		background-color: $primary-color;
-		transition: height .2s;
+		transition: height 0.2s;
 
 		.header-wrap {
 			display: flex;
@@ -42,7 +42,7 @@
 									left: 0;
 									display: inline-block;
 									background-color: #fff;
-									transition: width .3s ease-in-out;
+									transition: width 0.3s ease-in-out;
 									content: '';
 									@include size(0, 2px);
 								}
@@ -111,7 +111,6 @@
 						background-color: #fff;
 						border-radius: 50px;
 						content: '';
-						// transition: all .3s;
 					}
 					&::before {
 						margin-bottom: 5px;
@@ -128,7 +127,7 @@
 					width: 100%;
 					height: 100vh;
 					background-color: #fff;
-					transition: right .2s;
+					transition: right 0.2s;
 					.row-top {
 						display: flex;
 						justify-content: space-between;
