@@ -1,3 +1,12 @@
+@keyframes loading-spinner {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
 .contact-pg {
 	background-color: $sub-bg-color;
 	padding-top: 100px;
@@ -322,5 +331,66 @@
 				}
 			}
 		}
+	}
+}
+
+.confirm-pop {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 999;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0,0,0,.5);
+	@include size(100%, 100%);
+	.modal {
+		display: inline-block;
+		text-align: center;
+		background-color: #fff;
+		border-radius: 10px;
+		p {
+			padding: 64px 60px;
+			font-size: 18px;
+			font-weight: 600;
+			border-bottom: 1px solid #ccc;
+		}
+		button {
+			width: 100%;
+			padding: 12px 0;
+			font-size: 14px;
+			font-weight: 600;
+		}
+	}
+}
+
+.contact-spinner {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: none;
+	background-color: rgba(255,255,255,.7);
+	@include size(100%, 100%);
+	.spinner {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		z-index: 100;
+		animation: loading-spinner .6s linear infinite;
+		margin-left: -20px;
+		margin-top: -20px;
+	}
+
+	.spinner .spinner-icon {
+		width: 40px;
+		height: 40px;
+		border: solid 4px transparent;
+		border-radius: 50%;
+		border-left-color: $primary-color;
+		border-top-color: $primary-color;
 	}
 }

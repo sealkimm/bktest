@@ -170,26 +170,28 @@
 </div>
 
 <script>
-	const brandInteriorSwiper = new Swiper('.sc-brand-info .interior-swiper', {
-		loop: true,
-		pagination: {
-			el: '.swiper-pagination',
-			clickable: true,
-		},
-		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
-		},
-	});
+	document.addEventListener('DOMContentLoaded', () => {
+		const brandInteriorSwiper = new Swiper('.sc-brand-info .interior-swiper', {
+			loop: true,
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+			},
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+		});
 
-	const brandMenuSwiper = new Swiper('.sc-brand-info .menu-swiper', {
-		loop: true,
-		slidesPerView: 'auto',
-		speed: 2500,
-		spaceBetween: 38,
-		autoplay: {
-			delay: 1,
-		},
+		const brandMenuSwiper = new Swiper('.sc-brand-info .menu-swiper', {
+			loop: true,
+			slidesPerView: 'auto',
+			speed: 2500,
+			spaceBetween: 38,
+			autoplay: {
+				delay: 1,
+			},
+		});
 	});
 
 	// URL에서 브랜드 파라미터를 가져오기
