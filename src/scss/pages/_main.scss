@@ -48,7 +48,7 @@
 			bottom: 0;
 			left: 0;
 			background-color: #fff;
-			opacity: 0.7;
+			opacity: .7;
 		}
 		.title-wrap {
 			position: absolute;
@@ -59,7 +59,7 @@
 			width: 100%;
 			max-width: 1300px;
 			background-size: cover;
-			transform: translate(-50%, -50%);
+			transform: translate(-50%,-50%);
 			gap: 90px;
 			@include textPadding();
 			.img {
@@ -148,7 +148,7 @@
 				align-items: center;
 				box-sizing: border-box;
 				padding: 180px 20px 140px;
-				transition: opacity 0.5s;
+				transition: opacity .5s;
 				gap: 108px;
 				.title {
 					font-size: 70px;
@@ -170,13 +170,13 @@
 				}
 				&.ani {
 					.title {
-						animation: fadeInUp 0.6s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+						animation: fadeInUp .6s cubic-bezier(.25,.1,.25,1) forwards;
 					}
 					.wrap {
-						animation: fadeInUp 0.6s cubic-bezier(0.25, 0.1, 0.25, 1) 0.05s forwards;
+						animation: fadeInUp .6s cubic-bezier(.25,.1,.25,1) .05s forwards;
 					}
 					.more-link {
-						animation: fadeIn 0.6s 0.05s forwards;
+						animation: fadeIn .6s .05s forwards;
 					}
 				}
 			}
@@ -211,7 +211,7 @@
 			align-items: center;
 			background-color: $black-color;
 			border-radius: 100%;
-			transform: translate(-50%, -50%);
+			transform: translate(-50%,-50%);
 			@include size(201px, 201px);
 			.curr,
 			.total {
@@ -304,9 +304,9 @@
 					}
 					li {
 						img {
-							@include size(166px, 166px);
+							@include size(auto, 166px);
 							transform-origin: center bottom;
-							transition: transform 0.3s ease;
+							transition: transform .3s ease;
 						}
 						&:hover {
 							img {
@@ -353,7 +353,7 @@
 			display: flex;
 			flex-direction: column;
 			text-align: center;
-			transform: translate(-50%, -50%);
+			transform: translate(-50%,-50%);
 			gap: 67px;
 			.title {
 				font-size: 70px;
@@ -396,11 +396,11 @@
 					left: 50%;
 					width: 102%;
 					height: 102%;
-					background: rgba(25, 25, 25, 0.85);
-					transform: translate(-50%, -50%);
+					background: rgba(25,25,25,.85);
+					transform: translate(-50%,-50%);
 					transition:
-						clip-path 0.6s,
-						-webkit-clip-path 0.6s;
+						clip-path .6s,
+						-webkit-clip-path .6s;
 					clip-path: circle(0% at 50% 50%);
 					dl {
 						position: absolute;
@@ -412,7 +412,7 @@
 						text-align: center;
 						white-space: nowrap;
 						color: #f2f2f4;
-						transform: translate(-50%, -50%);
+						transform: translate(-50%,-50%);
 						gap: 55px;
 					}
 					dt {
@@ -420,14 +420,14 @@
 					}
 					dd {
 						font-size: 14px;
-						opacity: 0.6;
+						opacity: .6;
 						&::before {
 							position: absolute;
 							top: 58%;
 							left: 50%;
 							display: block;
 							background-color: #fff;
-							transform: translate(-50%, -50%);
+							transform: translate(-50%,-50%);
 							content: '';
 							@include size(42px, 1px);
 						}
@@ -444,7 +444,7 @@
 		align-items: center;
 		overflow: hidden;
 		padding: 170px 0 200px;
-		background: linear-gradient(to top, rgba(249, 243, 226, 1) 0%, rgba(255, 255, 255, 0) 100%);
+		background: linear-gradient(to top,rgba(249,243,226,1) 0%,rgba(255,255,255,0) 100%);
 
 		.text-group {
 			@include textPadding();
@@ -479,8 +479,8 @@
 				align-items: center;
 				background: #ffce00;
 				border-radius: 50%;
-				transform: translate(-50%, -50%) scale(1);
-				transition: all 0.4s;
+				transform: translate(-50%,-50%) scale(1);
+				transition: all .4s;
 				@include size(105px, 105px);
 				&::before {
 					content: '⭢';
@@ -624,7 +624,7 @@
 					.menu-list {
 						display: grid;
 						gap: pxToVw3(60px);
-						grid-template-columns: repeat(2, 1fr);
+						grid-template-columns: repeat(2,1fr);
 						figcaption {
 							font-size: pxToVw3(30px);
 							margin-top: pxToVw3(30px);
@@ -715,7 +715,7 @@
 				}
 				.img {
 					img {
-						transform: scale(0.85);
+						transform: scale(.85);
 					}
 				}
 				&:hover {

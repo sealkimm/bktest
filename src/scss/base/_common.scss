@@ -23,7 +23,7 @@ img {
 	width: 1px;
 	height: 1px;
 	margin: -1px;
-	clip: rect(0, 0, 0, 0);
+	clip: rect(0,0,0,0);
 }
 input::placeholder,
 select::placeholder,
@@ -46,7 +46,7 @@ textarea::placeholder {
 		z-index: 20;
 		display: block;
 		font-size: 22px;
-		transition: color 0.3s;
+		transition: color .3s;
 	}
 	&::after {
 		position: absolute;
@@ -54,7 +54,7 @@ textarea::placeholder {
 		left: 0;
 		display: block;
 		background-color: $black-color;
-		transition: width 0.3s;
+		transition: width .3s;
 		content: '';
 		@include size(0, 100%);
 	}

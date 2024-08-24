@@ -11,11 +11,9 @@
 @import './base/common'; // 프로젝트 환경 스타일
 
 // Layout
-@import './layout/wrapper'; // 레이아웃 스타일
 @import './layout/header';
 @import './layout/footer';
 @import './layout/floating-btn';
-
 // Pages
 @import './pages/main'; // 섹션별 페이지 스타일
 @import './pages/about';
