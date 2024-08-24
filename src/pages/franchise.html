@@ -63,19 +63,41 @@
 </div>
 
 <script>
-	gsap.set('.franchise-pg .process-item', { opacity: 0, x: -50 });
+	ScrollTrigger.matchMedia({
+		'(min-width: 769px)': function () {
+			gsap.set('.franchise-pg .process-item', { opacity: 0, x: -50 });
 
-	gsap.to('.franchise-pg .process-item', {
-		scrollTrigger: {
-			trigger: '.process-wrap',
-			start: '10% 50%',
+			gsap.to('.franchise-pg .process-item', {
+				scrollTrigger: {
+					trigger: '.process-wrap',
+					start: '10% 50%',
+				},
+				stagger: {
+					amount: 1,
+					from: 'left',
+				},
+				opacity: 1,
+				x: 0,
+			});
 		},
-		stagger: {
-			amount: 1,
-			from: 'left',
+
+		'(max-width: 768px)': function () {
+			gsap.set('.franchise-pg .process-item', { opacity: 0, y: 50 });
+
+			gsap.to('.franchise-pg .process-item', {
+				scrollTrigger: {
+					trigger: '.process-wrap',
+					start: '-18% center',
+					scrub: 3,
+				},
+				stagger: {
+					amount: 1,
+					from: 'top',
+				},
+				opacity: 1,
+				y: 0,
+			});
 		},
-		opacity: 1,
-		x: 0,
 	});
 </script>
 {% endblock %}

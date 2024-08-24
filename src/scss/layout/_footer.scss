@@ -34,21 +34,22 @@
 	}
 
 	.col-right {
+		display: flex;
+		flex-direction: column;
 		font-weight: 600;
 		text-align: center;
 		color: #fff;
+		gap: 14px;
 		p {
 			font-size: 22px;
 		}
 		h2 {
 			font-size: 42px;
-			margin-top: 14px;
 		}
 		.insta-list {
 			display: flex;
 			gap: 38px;
 			justify-content: center;
-			margin-top: 14px;
 			.insta-item {
 				display: flex;
 				flex-direction: column;
@@ -59,7 +60,7 @@
 				display: block;
 				font-size: 14px;
 				font-weight: 400;
-				margin-top: 6px;
+				margin-top: 8px;
 			}
 		}
 	}
@@ -89,6 +90,7 @@
 		}
 
 		.col-right {
+			display: block;
 			margin-top: pxToVw3(50px);
 			text-align: left;
 			p {
@@ -96,9 +98,22 @@
 				font-weight: 400;
 			}
 			h2 {
+				display: inline-block;
 				font-size: pxToVw3(50px);
 				font-weight: 400;
-				margin-top: 6px;
+			}
+			.insta-list {
+				display: inline-flex;
+				gap: pxToVw3(66px);
+				margin-left: pxToVw3(110px);
+				margin-top: pxToVw3(-30px);
+				vertical-align: text-bottom;
+				.insta-item {
+					width: pxToVw3(50px);
+					.name {
+						font-size: pxToVw3(24px);
+					}
+				}
 			}
 		}
 	}

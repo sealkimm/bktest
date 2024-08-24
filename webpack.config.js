@@ -10,7 +10,7 @@ module.exports = {
   output: {
     filename: 'app.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/bktest/', // 웹서버의 루트 디렉토리로 설정입니다
+    publicPath: '/bktest/',
   },
   module: {
     rules: [
@@ -23,42 +23,40 @@ module.exports = {
           {
             loader: 'nunjucks-html-loader',
             options: {
-              searchPaths: ['./src/@inc'], // 템플릿 파일의 경로 설정
+              searchPaths: ['./src/@inc'],
             },
           },
         ],
       },
       {
-        test: /\.css$/,
-        use: [
-          MiniCssExtractPlugin.loader, // CSS를 별도 파일로 추출
-          'css-loader', // CSS를 CommonJS로 변환
-        ],
-      },
-      {
         test: /\.scss$/,
-        use: [
-          MiniCssExtractPlugin.loader, // CSS를 별도 파일로 추출
-          'css-loader', // CSS를 CommonJS로 변환
-          'sass-loader', // SCSS를 CSS로 컴파일
-        ],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
       },
       {
         test: /\.(png|jpg|jpeg|gif|svg|webp)$/,
         type: 'asset/resource',
         generator: {
           filename: (pathData) => {
-            // 원본 경로를 유지하면서 'img' 폴더로 이동
             const filePath = pathData.filename.replace(/^src\//, '');
             return filePath;
           },
         },
       },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
+      }
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/pages/main.html', // main index
+      template: './src/pages/main.html',
       filename: 'index.html',
     }),
     new HtmlWebpackPlugin({
@@ -83,19 +81,17 @@ module.exports = {
     }),
     new StylelintPlugin({
       files: './src/scss/**/*.scss',
-      // configFile: '.stylelintrc',
-      fix: true, // 자동 수정 기능을 활성화
+      fix: true,
       customSyntax: postcssScss,
     }),
     new MiniCssExtractPlugin({
-      filename: 'styles.css', // 추출된 CSS 파일의 이름
+      filename: 'styles.css',
     }),
   ],
   devServer: {
-    // host: 'localhost',
-    open: true, // npm run dev 시 자동으로 브라우저 open
+    open: true,
     static: {
-      directory: path.join(__dirname, 'dist'), // 이거하면 npm run dev해도 저장이 안됨?? 그러나 깃허브 배포할때 해야됨!
+      directory: path.join(__dirname, 'dist'),
     },
   },
 };

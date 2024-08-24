@@ -103,9 +103,25 @@
 				.title {
 					font-size: pxToVw3(60px);
 					gap: pxToVw3(60px);
+					// &::before,
+					// &::after {
+					// 	width: 100%;
+					// }
 					&::before,
 					&::after {
-						width: 22%;
+						// position: absolute;
+						// display: block;
+						// width: var(--before-width,0%);
+						// height: 1px;
+						// background-color: $black-color;
+						// transform: translateY(-50%);
+						// content: '';
+					}
+					&::before {
+						left: calc(50% + pxToVw3(180px));
+					}
+					&::after {
+						right: calc(50% + pxToVw3(180px));
 					}
 				}
 			}

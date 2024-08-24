@@ -508,11 +508,13 @@
 		.sc-main {
 			@include size(100%, 100vh);
 			overflow: hidden;
-			> img {
-				position: absolute;
-				right: -100px;
-				width: auto;
-				height: 100%;
+			.inner {
+				> img {
+					position: absolute;
+					right: -100px;
+					width: auto;
+					height: 100%;
+				}
 			}
 			.title-wrap {
 				top: calc(50% + 28px);
@@ -578,6 +580,7 @@
 							margin-bottom: pxToVw3(30px);
 						}
 						.desc {
+							padding: 0;
 							font-size: pxToVw3(30px);
 						}
 					}
@@ -623,8 +626,9 @@
 					}
 					.menu-list {
 						display: grid;
-						gap: pxToVw3(60px);
+						align-items: baseline;
 						grid-template-columns: repeat(2,1fr);
+						gap: pxToVw3(60px);
 						figcaption {
 							font-size: pxToVw3(30px);
 							margin-top: pxToVw3(30px);
@@ -632,6 +636,9 @@
 						li {
 							img {
 								@include size(pxToVw3(300px), pxToVw3(300px));
+								&.height27 {
+									height: pxToVw3(210px);
+								}
 							}
 						}
 					}

@@ -2,6 +2,10 @@
 <html lang="ko">
 	{% include 'head.html' %}
 	<body>
+		<script>
+			AOS.init();
+			gsap.registerPlugin(ScrollTrigger);
+		</script>
 		<div class="wrapper">
 			<!-- header -->
 			{% include 'header.html' %}
@@ -19,11 +23,6 @@
 			{% include 'footer.html' %}
 			<!-- //footer -->
 		</div>
-		{% block scripts %}
-		<script>
-			AOS.init();
-			gsap.registerPlugin(ScrollTrigger);
-		</script>
-		{% endblock %}
+		{% block scripts %} {% endblock %}
 	</body>
 </html>
