@@ -10,7 +10,7 @@ module.exports = {
   output: {
     filename: 'app.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/bktest/',
+    // publicPath: '/bktest/',
   },
   module: {
     rules: [
@@ -61,23 +61,23 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: './src/pages/about.html',
-      filename: 'about.html',
+      filename: 'sub/about/index.html',
     }),
     new HtmlWebpackPlugin({
       template: './src/pages/brands.html',
-      filename: 'brands.html',
+      filename: 'sub/brands/index.html',
     }),
     new HtmlWebpackPlugin({
       template: './src/pages/franchise.html',
-      filename: 'franchise.html',
+      filename: 'sub/franchise/index.html',
     }),
     new HtmlWebpackPlugin({
       template: './src/pages/contact.html',
-      filename: 'contact.html',
+      filename: 'sub/contact/index.html',
     }),
     new HtmlWebpackPlugin({
       template: './src/pages/brand.html',
-      filename: 'brand.html',
+      filename: 'sub/brand/index.html',
     }),
     new StylelintPlugin({
       files: './src/scss/**/*.scss',

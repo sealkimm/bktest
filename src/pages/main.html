@@ -46,7 +46,7 @@
 					<div class="brand">부엌간</div>
 					<p class="desc">“My Favorite European Restaurant” 이라는 슬로건을 기반으로 운영하는 유러피안 레스토랑 ‘부엌간’입니다.</p>
 				</article>
-				<a href="/bktest/brand.html?brand=b1" class="more-link"><span>View More</span></a>
+				<a href="/sub/brand?brand=b1" class="more-link"><span>View More</span></a>
 			</div>
 			<div class="img-area">
 				<div class="img"><img src="../img/main/main_brands01.webp" alt="부엌간 이미지" /></div>
@@ -59,7 +59,7 @@
 					<div class="brand">부엌간 차이니즈</div>
 					<p class="desc">일반 중식당과 다르게 유러피안 감성을 기반으로 한 차이니즈 레스토랑입니다.</p>
 				</article>
-				<a href="/bktest/brand.html?brand=b2" class="more-link"><span>View More</span></a>
+				<a href="/sub/brand?brand=b2" class="more-link"><span>View More</span></a>
 			</div>
 			<div class="img-area">
 				<div class="img"><img src="../img/main/main_brands02.webp" alt="부엌간 차이니즈 이미지" /></div>
@@ -72,7 +72,7 @@
 					<div class="brand">카페 드 부엌</div>
 					<p class="desc">카페 드 부엌은 단순한 유럽 감성이 아닌 디테일한 유러피안 감성을 담아내, 방문하시는 고객님들께 공간적 가치와 커피의 즐거움을 선사합니다.</p>
 				</article>
-				<a href="/bktest/brand.html?brand=b3" class="more-link"><span>View More</span></a>
+				<a href="/sub/brand?brand=b3" class="more-link"><span>View More</span></a>
 			</div>
 			<div class="img-area">
 				<div class="img"><img src="../img/main/main_brands03.webp" alt="카페 드 부엌 이미지" /></div>
@@ -158,7 +158,7 @@
 						<div class="menu-list text"><span>메뉴 준비 중입니다 :&#41;</span></div>
 					</div>
 				</article>
-				<a href="/bktest/brands.html" class="more-link"><span>View More</span></a>
+				<a href="/sub/brands" class="more-link"><span>View More</span></a>
 			</div>
 		</div>
 	</section>
@@ -316,7 +316,7 @@
 			<span class="desc">외식업 프랜차이즈 창업의 꿈.</span>
 			<p class="title">지금 바로<span></span> 시작할 수 있습니다!</p>
 		</div>
-		<a href="/bktest/contact.html" class="contact-link">
+		<a href="/sub/contact" class="contact-link">
 			<div class="img"><img src="../img/main/main_contact_circle.png" alt="contact BUUK" /></div>
 			<div class="circle"><span class="blind">contact 바로가기</span></div>
 		</a>
@@ -455,20 +455,38 @@
 				.addLabel('d')
 				.to('.sc-menu .third .brand', { opacity: 1, y: 0 }, 'd')
 				.to('.sc-menu .third .text', { opacity: 1, y: 0 }, 'd');
+
+			// sc-contact
+			gsap.set('.sc-contact .contact, .sc-contact .contact-link', { opacity: 0 });
+			gsap.set('.sc-contact .desc, .sc-contact .title', { opacity: 0, y: 50 });
+
+			const mainContactAni = gsap.timeline({
+				scrollTrigger: {
+					trigger: '.sc-contact',
+					start: 'top center',
+					end: '40% center',
+					scrub: 5,
+				},
+			});
+			mainContactAni
+				.to('.sc-contact .contact', { opacity: 1 })
+				.to('.sc-contact .desc', { opacity: 1, y: 0 })
+				.to('.sc-contact .title', { opacity: 1, y: 0 })
+				.to('.sc-contact .contact-link', { opacity: 1 });
 		},
 
 		'(max-width: 768px)': function () {
 			// loadingAni
-			gsap.set('.sc-main .inner .overlay', { opacity: 1 });
+			gsap.set('.sc-main .inner', { opacity: 0 });
 			gsap.set('.sc-main .inner .title-wrap', { opacity: 0, y: 70 });
 			gsap.set('.mob-header', { y: '-100%' });
 
 			const mainLoadingAni = gsap.timeline();
 			mainLoadingAni
 				.addLabel('a')
-				.to('.sc-main .overlay', { height: 0, duration: 0.8 }, 'a')
-				.to('.sc-main .overlay', { opacity: 0, height: '100%', duration: 0 }, 'a+=0.81')
-				.to('.sc-main .overlay', { opacity: 0.7, duration: 0.5 }, 'a+=0.82')
+				.to('.sc-main .inner', { opacity: 1 }, 'a')
+				// .to('.sc-main .overlay', { opacity: 0, height: '100%', duration: 0 }, 'a+=0.81')
+				// .to('.sc-main .overlay', { opacity: 0.7, duration: 0.5 }, 'a+=0.82')
 
 				.addLabel('b')
 				.to('.mob-header', { y: 0, duration: 0.5 }, 'b')
@@ -483,8 +501,8 @@
 			const mainMenuAni = gsap.timeline({
 				scrollTrigger: {
 					trigger: '.sc-menu',
-					start: 'top 65%',
-					end: '50% 65%',
+					start: 'top 68%',
+					end: '50% 68%',
 					scrub: 5,
 				},
 			});
@@ -501,6 +519,24 @@
 				.addLabel('d')
 				.to('.sc-menu .third .brand', { opacity: 1, y: 0 }, 'd')
 				.to('.sc-menu .third .text', { opacity: 1, y: 0 }, 'd');
+
+			// sc-contact
+			gsap.set('.sc-contact .contact, .sc-contact .contact-link', { opacity: 0 });
+			gsap.set('.sc-contact .desc, .sc-contact .title', { opacity: 0, y: 50 });
+
+			const mainContactAni = gsap.timeline({
+				scrollTrigger: {
+					trigger: '.sc-contact',
+					start: 'top 70%',
+					end: '40% 70%',
+					scrub: 5,
+				},
+			});
+			mainContactAni
+				.to('.sc-contact .contact', { opacity: 1 })
+				.to('.sc-contact .desc', { opacity: 1, y: 0 })
+				.to('.sc-contact .title', { opacity: 1, y: 0 })
+				.to('.sc-contact .contact-link', { opacity: 1 });
 		},
 
 		all: function () {
@@ -521,24 +557,6 @@
 				.addLabel('a')
 				.to('.sc-about .desc', { opacity: 1, x: 0, duration: 1.5 }, 'a+=.5')
 				.to('.sc-about .img-group', { opacity: 1, x: 0, duration: 1.5 }, 'a+=.5');
-
-			// sc-contact
-			gsap.set('.sc-contact .contact, .sc-contact .contact-link', { opacity: 0 });
-			gsap.set('.sc-contact .desc, .sc-contact .title', { opacity: 0, y: 50 });
-
-			const mainContactAni = gsap.timeline({
-				scrollTrigger: {
-					trigger: '.sc-contact',
-					start: 'top center',
-					end: '40% center',
-					scrub: 5,
-				},
-			});
-			mainContactAni
-				.to('.sc-contact .contact', { opacity: 1 })
-				.to('.sc-contact .desc', { opacity: 1, y: 0 })
-				.to('.sc-contact .title', { opacity: 1, y: 0 })
-				.to('.sc-contact .contact-link', { opacity: 1 });
 		},
 	});
 </script>
