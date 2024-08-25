@@ -84,4 +84,13 @@ textarea::placeholder {
 			}
 		}
 	}
+
+	@include tab-only {
+		line-height: pxToVw(64px);
+		border-radius: 1.8vw;
+		@include size(pxToVw(240px), pxToVw(64px));
+		span {
+			font-size: pxToVw(30px);
+		}
+	}
 }

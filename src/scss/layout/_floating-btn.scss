@@ -58,4 +58,18 @@
 	@include mob-only {
 		display: none;
 	}
+
+	@include tab-only {
+		bottom: pxToVw(60px);
+		.text {
+			font-size: pxToVw(30px);
+		}
+		.contact-link,
+		.btn-top {
+			@include size(pxToVw(180px), pxToVw(180px));
+		}
+		&.active {
+			right: pxToVw(55px);
+		}
+	}
 }

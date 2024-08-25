@@ -33,6 +33,7 @@
 						.nav-link {
 							display: block;
 							padding: 6px 12px;
+							font-size: 16px;
 							color: #fff;
 							span {
 								position: relative;
@@ -157,6 +158,28 @@
 					}
 					&.on {
 						right: 0;
+					}
+				}
+			}
+		}
+	}
+
+	@include tab-only {
+		.pc-header {
+			height: pxToVw(160px);
+			.header-wrap {
+				height: pxToVw(160px);
+				.logo {
+					@include size(110px, 27.5px);
+				}
+				.nav {
+					.nav-list {
+						gap: pxToVw(20px);
+						.nav-item {
+							.nav-link {
+								font-size: pxToVw(30px);
+							}
+						}
 					}
 				}
 			}

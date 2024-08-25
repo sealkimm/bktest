@@ -147,4 +147,32 @@
 			}
 		}
 	}
+
+	@include tab-only {
+		padding-top: pxToVw(160px);
+		.brands-wrap {
+			padding: pxToVw(120px) 0 pxToVw(180px);
+		}
+		.sc-brands {
+			.title-group {
+				.title {
+					font-size: pxToVw(70px);
+					&::before {
+						left: calc(50% + pxToVw(300px));
+					}
+					&::after {
+						right: calc(50% + pxToVw(300px));
+					}
+				}
+			}
+			.brands-group {
+				padding-top: pxToVw(90px);
+				.brands-item {
+					.name {
+						font-size: pxToVw(50px);
+					}
+				}
+			}
+		}
+	}
 }

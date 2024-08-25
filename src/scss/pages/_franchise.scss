@@ -63,6 +63,7 @@
 				border: 1px solid $black-color;
 				border-radius: 15px;
 				gap: 17px;
+				justify-self: center;
 				@include size(270px, 315px);
 				.num {
 					font-size: 14px;
@@ -150,6 +151,65 @@
 							display: block;
 						}
 					}
+					&:last-child {
+						&::after {
+							display: none;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@include tab-only {
+		.banner-group {
+			height: pxToVw(550px);
+			.title {
+				font-size: pxToVw(64px);
+				margin-top: pxToVw(160px);
+			}
+		}
+		.process-group {
+			h3 {
+				font-size: pxToVw(48px);
+				gap: pxToVw(30px);
+				margin-bottom: pxToVw(80px);
+				&::after {
+					height: pxToVw(70px);
+				}
+			}
+			.process-wrap {
+				padding: pxToVw(120px) 0 pxToVw(180px);
+			}
+			.process-list {
+				gap: pxToVw(30px);
+				grid-template-columns: repeat(3,1fr);
+				.process-item {
+					gap: pxToVw(22px);
+					@include size(pxToVw(490px), pxToVw(540px));
+					.num {
+						font-size: pxToVw(28px);
+					}
+					.tit {
+						font-size: pxToVw(40px);
+					}
+					.text {
+						font-size: pxToVw(30px);
+						margin-top: pxToVw(20px);
+					}
+					&::after {
+						right: pxToVw(-80px);
+						transform: scale(.7);
+					}
+					&:nth-child(4),
+					&:nth-child(8) {
+						&::after {
+							display: block;
+						}
+					}
+					&:nth-child(3),
+					&:nth-child(6),
+					&:nth-child(9),
 					&:last-child {
 						&::after {
 							display: none;

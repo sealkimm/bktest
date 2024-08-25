@@ -227,6 +227,72 @@
 			}
 		}
 	}
+
+	@include tab-only {
+		padding-top: pxToVw(160px);
+		.contact-wrap {
+			padding: pxToVw(120px) 20px pxToVw(180px);
+		}
+		.title-group {
+			dt {
+				font-size: pxToVw(70px);
+			}
+			dd {
+				font-size: pxToVw(32px);
+			}
+		}
+		.form-group {
+			margin-top: pxToVw(60px);
+			padding: pxToVw(80px) pxToVw(108px);
+			> p {
+				font-size: pxToVw(40px);
+			}
+			.form-list {
+				li {
+					margin-bottom: pxToVw(18px);
+					label {
+						width: pxToVw(340px);
+						padding: pxToVw(18px) 0;
+						font-size: pxToVw(34px);
+						padding-left: pxToVw(46px);
+					}
+					input {
+						max-width: pxToVw(308px);
+						font-size: pxToVw(34px);
+					}
+					select {
+						font-size: pxToVw(34px);
+					}
+					textarea {
+						height: pxToVw(380px);
+						font-size: pxToVw(34px);
+					}
+				}
+			}
+			.check {
+				label {
+					font-size: pxToVw(34px);
+				}
+				input {
+					&[type='checkbox'] {
+						margin-right: pxToVw(20px);
+						transform: scale(.8);
+					}
+				}
+				.show-pop-btn {
+					font-size: pxToVw(32px);
+				}
+			}
+			.submit-btn {
+				margin-top: pxToVw(46px);
+				max-width: pxToVw(580px);
+				span {
+					padding: pxToVw(20px) 0;
+					font-size: pxToVw(34px);
+				}
+			}
+		}
+	}
 }
 
 .agree-pop {
@@ -298,6 +364,13 @@
 			}
 		}
 	}
+	@include tab-only {
+		.pop-cont {
+			height: 90%;
+			max-width: pxToVw(1400px);
+			padding: pxToVw(80px);
+		}
+	}
 }
 
 .confirm-pop {
@@ -357,6 +430,7 @@
 	right: 0;
 	bottom: 0;
 	left: 0;
+	z-index: 999;
 	display: none;
 	background-color: rgba(255,255,255,.7);
 	@include size(100%, 100%);

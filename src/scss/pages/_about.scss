@@ -83,4 +83,33 @@
 			}
 		}
 	}
+
+	@include tab-only {
+		padding-top: pxToVw(160px);
+		.about-wrap {
+			padding: pxToVw(120px) 0 pxToVw(180px);
+		}
+		.text-group {
+			.main {
+				font-size: pxToVw(160px);
+			}
+			.sub {
+				font-size: pxToVw(50px);
+			}
+			.desc {
+				font-size: pxToVw(28px);
+				margin-top: pxToVw(90px);
+			}
+		}
+		.logo-list {
+			margin-top: pxToVw(160px);
+			.img-box {
+				height: pxToVw(240px);
+			}
+			.brand {
+				font-size: pxToVw(30px);
+				margin-top: pxToVw(66px);
+			}
+		}
+	}
 }

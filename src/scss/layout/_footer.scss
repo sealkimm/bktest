@@ -117,4 +117,37 @@
 			}
 		}
 	}
+
+	@include tab-only {
+		.footer-wrap {
+			padding: pxToVw(62px) pxToVw(60px);
+		}
+		.col-left {
+			.info {
+				font-size: pxToVw(30px);
+				margin-top: pxToVw(50px);
+			}
+			.copy {
+				font-size: pxToVw(30px);
+				margin-top: pxToVw(38px);
+			}
+		}
+		.col-right {
+			gap: pxToVw(20px);
+			p {
+				font-size: pxToVw(32px);
+			}
+			h2 {
+				font-size: pxToVw(48px);
+			}
+			.insta-list {
+				.insta-item {
+					width: pxToVw(52px);
+					.name {
+						font-size: pxToVw(26px);
+					}
+				}
+			}
+		}
+	}
 }
