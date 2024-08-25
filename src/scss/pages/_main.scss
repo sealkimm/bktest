@@ -164,8 +164,9 @@
 						margin-bottom: 20px;
 					}
 					.desc {
-						padding: 0 110px;
+						padding: 0 170px;
 						font-size: 20px;
+						word-break: keep-all;
 					}
 				}
 				&.ani {

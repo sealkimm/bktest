@@ -324,7 +324,7 @@
 </main>
 
 <script>
-	document.addEventListener('DOMContentLoaded', () => {
+	window.addEventListener('load', () => {
 		const mainStoreLeftSwiper = new Swiper('.sc-store .col-left .col-left-swiper', {
 			loop: true,
 			slidesPerView: 'auto',
@@ -360,7 +360,6 @@
 			},
 		});
 	});
-
 	ScrollTrigger.matchMedia({
 		'(min-width: 769px)': function () {
 			// loadingAni
@@ -389,7 +388,7 @@
 				scrollTrigger: {
 					trigger: '.sc-brands',
 					start: 'top 0%',
-					end: '600% 100%',
+					end: '1000% -80%',
 					scrub: 3,
 					pin: true,
 				},
@@ -401,32 +400,32 @@
 				.to('.sc-brands .brands-group.b1 .text-area .wrap', { opacity: 1, y: 0, duration: 1 }, 'a+=.03')
 				.to('.sc-brands .brands-group.b1 .text-area .more-link', { opacity: 1, duration: 1 }, 'a+=.03')
 
-				.to({}, { duration: 1 })
+				.to({}, { duration: 2 })
+				.to('.sc-brands', { duration: 5 })
 				.addLabel('b')
 				.to('.sc-brands .brands-group.b2', { zIndex: 13 }, 'b')
-				.to('.sc-brands .brands-group.b1 .text-area', { opacity: 0, duration: 0.6 }, 'b+=.3')
-				.to('.sc-brands .brands-group.b2 .img-area', { y: 0, duration: 1 }, 'b+=.8')
+				.to('.sc-brands .brands-group.b1 .text-area', { opacity: 0, duration: 0.6 }, 'b+=1')
+				.to('.sc-brands .brands-group.b2 .img-area', { y: 0, duration: 1.8 }, 'b+=2')
+
+				.to('.sc-brands .brands-group.b2 .text-area .title', { opacity: 1, y: 0, duration: 1 }, 'b+=4')
+				.to('.sc-brands .brands-group.b2 .text-area .wrap', { opacity: 1, y: 0, duration: 1 }, 'b+=4.3')
+				.to('.sc-brands .brands-group.b2 .text-area .more-link', { opacity: 1, duration: 1 }, 'b+=4.3')
 				.to('.sc-brands .circle .num', { textContent: '2', duration: 0 }, 'b+=.5')
 
-				.to({}, { duration: 1 })
-				.addLabel('c')
-				.to('.sc-brands .brands-group.b2 .text-area .title', { opacity: 1, y: 0, duration: 1 }, 'c')
-				.to('.sc-brands .brands-group.b2 .text-area .wrap', { opacity: 1, y: 0, duration: 1 }, 'c+=.03')
-				.to('.sc-brands .brands-group.b2 .text-area .more-link', { opacity: 1, duration: 1 }, 'c+=.03')
-
-				.to({}, { duration: 1 })
+				.to({}, { duration: 2 })
+				.to('.sc-brands', { duration: 5 })
 				.addLabel('d')
 				.to('.sc-brands .brands-group.b3', { zIndex: 15 }, 'd')
-				.to('.sc-brands .brands-group.b2 .text-area', { opacity: 0, duration: 0.6 }, 'd+=.3')
-				.to('.sc-brands .brands-group.b3 .img-area', { y: 0, duration: 1 }, 'd+=.8')
+				.to('.sc-brands .brands-group.b2 .text-area', { opacity: 0, duration: 0.6 }, 'd+=1')
+				.to('.sc-brands .brands-group.b3 .img-area', { y: 0, duration: 1.8 }, 'd+=2')
+				.to('.sc-brands .brands-group.b3 .text-area .title', { opacity: 1, y: 0, duration: 1 }, 'd+=4')
+				.to('.sc-brands .brands-group.b3 .text-area .wrap', { opacity: 1, y: 0, duration: 1 }, 'd+=4.3')
+				.to('.sc-brands .brands-group.b3 .text-area .more-link', { opacity: 1, duration: 1 }, 'd+=4.3')
+
 				.to('.sc-brands .circle .num', { textContent: '3', duration: 0 }, 'd+=.5')
 
-				.to({}, { duration: 1 })
-				.addLabel('e')
-				.to('.sc-brands .brands-group.b3 .text-area .title', { opacity: 1, y: 0, duration: 1 }, 'e')
-				.to('.sc-brands .brands-group.b3 .text-area .wrap', { opacity: 1, y: 0, duration: 1 }, 'e+=.03')
-				.to('.sc-brands .brands-group.b3 .text-area .more-link', { opacity: 1, duration: 1 }, 'e+=.03')
-				.to({}, { duration: 1 });
+				.to({}, { duration: 2 })
+				.to('.sc-brands', { duration: 5 });
 
 			// sc-menu
 			gsap.set('.sc-menu .title', { opacity: 0, x: 100 });
@@ -463,8 +462,8 @@
 			const mainContactAni = gsap.timeline({
 				scrollTrigger: {
 					trigger: '.sc-contact',
-					start: 'top center',
-					end: '40% center',
+					start: 'top 68%',
+					end: '40% 68%',
 					scrub: 5,
 				},
 			});
@@ -485,8 +484,6 @@
 			mainLoadingAni
 				.addLabel('a')
 				.to('.sc-main .inner', { opacity: 1 }, 'a')
-				// .to('.sc-main .overlay', { opacity: 0, height: '100%', duration: 0 }, 'a+=0.81')
-				// .to('.sc-main .overlay', { opacity: 0.7, duration: 0.5 }, 'a+=0.82')
 
 				.addLabel('b')
 				.to('.mob-header', { y: 0, duration: 0.5 }, 'b')
