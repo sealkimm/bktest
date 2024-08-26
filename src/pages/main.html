@@ -364,6 +364,11 @@
 	ScrollTrigger.matchMedia({
 		'(min-width: 769px)': function () {
 			// loadingAni
+			// gsap.set('.sc-main .inner', { width: '20vw', height: '20vw', borderRadius: '200px', y: '50vw' });
+			// gsap.set('.sc-main .inner .overlay', { opacity: 0 });
+			// gsap.set('.sc-main .inner .title-wrap', { opacity: 0, y: 70 });
+			// gsap.set('.pc-header', { y: '-100%' });
+
 			gsap.timeline()
 				.to('.sc-main .inner', { y: 0, duration: 1, ease: 'power3.out' })
 				.addLabel('a')
@@ -468,8 +473,6 @@
 
 		'(max-width: 768px)': function () {
 			// loadingAni
-			gsap.set('.sc-main .inner', { opacity: 0 });
-			gsap.set('.sc-main .inner .title-wrap', { opacity: 0, y: 70 });
 			gsap.set('.mob-header', { y: '-100%' });
 
 			const mainLoadingAni = gsap.timeline();
@@ -479,7 +482,7 @@
 
 				.addLabel('b')
 				.to('.mob-header', { y: 0, duration: 0.5 }, 'b')
-				.to('.sc-main .inner .title-wrap', { opacity: 1, y: 0, duration: 0.7 }, 'b');
+				.to('.sc-main .inner .title-wrap', { opacity: 1, y: '-50%', duration: 0.7 }, 'b');
 
 			// sc-menu
 			gsap.set('.sc-menu .title', { opacity: 0, y: 50 });

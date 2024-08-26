@@ -513,15 +513,24 @@
 			@include size(100%, 100vh);
 			overflow: hidden;
 			.inner {
+				@include size(100%, 100%);
+				border-radius: 0;
+				transform: translateY(0);
+				opacity: 0;
 				> img {
 					position: absolute;
 					right: -100px;
 					width: auto;
 					height: 100%;
 				}
+				.overlay {
+					opacity: .7;
+				}
 			}
 			.title-wrap {
 				top: calc(50% + 28px);
+				transform: translateX(-50%) translateY(40px);
+				opacity: 0;
 				.img {
 					display: none;
 				}
