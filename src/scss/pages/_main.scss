@@ -35,7 +35,9 @@
 		height: 100vh;
 		.inner {
 			overflow: hidden;
-			@include size(100%, 100%);
+			border-radius: 200px;
+			transform: translateY(50vw);
+			@include size(20vw, 20vw);
 			> img {
 				height: 100%;
 			}
@@ -48,7 +50,7 @@
 			bottom: 0;
 			left: 0;
 			background-color: #fff;
-			opacity: .7;
+			opacity: 0;
 		}
 		.title-wrap {
 			position: absolute;
@@ -59,7 +61,8 @@
 			width: 100%;
 			max-width: 1300px;
 			background-size: cover;
-			transform: translate(-50%,-50%);
+			transform: translateX(-50%);
+			opacity: 0;
 			gap: 90px;
 			@include textPadding();
 			.img {
