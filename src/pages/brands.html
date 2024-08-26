@@ -36,44 +36,46 @@
 </div>
 
 <script>
-	ScrollTrigger.matchMedia({
-		'(min-width: 769px)': function () {
-			gsap.set('.brands-pg .brands-item', { opacity: 0, y: 100 });
-			gsap.to('.brands-pg .title', {
-				'--before-width': 'calc(50% - 165px)',
-				opacity: 1,
-				duration: 0.5,
-			});
-			gsap.to('.brands-pg .brands-item', {
-				stagger: {
-					amount: 0.25,
-					from: 'left',
-				},
-				opacity: 1,
-				y: 0,
-				delay: 0.5,
-			});
-		},
+	window.onload = () => {
+		ScrollTrigger.matchMedia({
+			'(min-width: 769px)': function () {
+				gsap.set('.brands-pg .brands-item', { opacity: 0, y: 100 });
+				gsap.to('.brands-pg .title', {
+					'--before-width': 'calc(50% - 165px)',
+					opacity: 1,
+					duration: 0.5,
+				});
+				gsap.to('.brands-pg .brands-item', {
+					stagger: {
+						amount: 0.25,
+						from: 'left',
+					},
+					opacity: 1,
+					y: 0,
+					delay: 0.5,
+				});
+			},
 
-		'(max-width: 768px)': function () {
-			gsap.set('.brands-pg .brands-item', { opacity: 0, y: 100 });
-			gsap.to('.brands-pg .title', {
-				'--before-width': 'calc(50% - 23.4375vw)',
-				opacity: 1,
-				duration: 0.5,
-			});
-			gsap.to('.brands-pg .brands-item', {
-				stagger: {
-					amount: 0.25,
-					from: 'left',
-				},
-				opacity: 1,
-				y: 0,
-				delay: 0.5,
-			});
-		},
+			'(max-width: 768px)': function () {
+				gsap.set('.brands-pg .brands-item', { opacity: 0, y: 100 });
+				gsap.to('.brands-pg .title', {
+					'--before-width': 'calc(50% - 23.4375vw)',
+					opacity: 1,
+					duration: 0.5,
+				});
+				gsap.to('.brands-pg .brands-item', {
+					stagger: {
+						amount: 0.25,
+						from: 'left',
+					},
+					opacity: 1,
+					y: 0,
+					delay: 0.5,
+				});
+			},
 
-		all: function () {},
-	});
+			all: function () {},
+		});
+	};
 </script>
 {% endblock %}

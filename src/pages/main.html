@@ -140,7 +140,7 @@
 							</li>
 							<li>
 								<figure>
-									<img src="../img/main/bkc_menu3.webp" alt="부엌간 차이니즈 메뉴 이미지" />
+									<img class="height27" src="../img/main/bkc_menu3.webp" alt="부엌간 차이니즈 메뉴 이미지" />
 									<figcaption>깐풍아귀</figcaption>
 								</figure>
 							</li>
@@ -324,7 +324,7 @@
 </main>
 
 <script>
-	window.addEventListener('DOMContentLoaded', () => {
+	window.onload = () => {
 		const mainStoreLeftSwiper = new Swiper('.sc-store .col-left .col-left-swiper', {
 			loop: true,
 			slidesPerView: 'auto',
@@ -363,11 +363,6 @@
 		ScrollTrigger.matchMedia({
 			'(min-width: 769px)': function () {
 				// loadingAni
-				// gsap.set('.sc-main .inner', { width: '20vw', height: '20vw', borderRadius: '200px', y: '50vw' });
-				// gsap.set('.sc-main .inner .overlay', { opacity: 0 });
-				// gsap.set('.sc-main .inner .title-wrap', { opacity: 0, y: 70 });
-				// gsap.set('.pc-header', { y: '-100%' });
-
 				gsap.timeline()
 					.to('.sc-main .inner', { y: 0, duration: 1, ease: 'power3.out' })
 					.addLabel('a')
@@ -550,6 +545,6 @@
 					.to('.sc-about .img-group', { opacity: 1, x: 0, duration: 1.5 }, 'a+=.5');
 			},
 		});
-	});
+	};
 </script>
 {% endblock %}

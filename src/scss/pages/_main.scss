@@ -652,11 +652,23 @@
 								&.height27 {
 									height: pxToVw3(210px);
 								}
+								// &.height26 {
+								// 	@include size(pxToVw3(295px), pxToVw3(260px));
+								// }
 							}
 						}
 					}
 					&.second {
 						flex-direction: column-reverse;
+						// .menu-list {
+						// 	li {
+						// 		&:nth-child(2) {
+						// 			img {
+						// 				height: pxToVw(220px);
+						// 			}
+						// 		}
+						// 	}
+						// }
 					}
 					&.third {
 						height: pxToVw3(220px);
