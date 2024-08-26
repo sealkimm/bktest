@@ -324,7 +324,7 @@
 </main>
 
 <script>
-	window.addEventListener('load', () => {
+	window.addEventListener('DOMContentLoaded', () => {
 		const mainStoreLeftSwiper = new Swiper('.sc-store .col-left .col-left-swiper', {
 			loop: true,
 			slidesPerView: 'auto',
@@ -359,197 +359,197 @@
 				},
 			},
 		});
-	});
 
-	ScrollTrigger.matchMedia({
-		'(min-width: 769px)': function () {
-			// loadingAni
-			// gsap.set('.sc-main .inner', { width: '20vw', height: '20vw', borderRadius: '200px', y: '50vw' });
-			// gsap.set('.sc-main .inner .overlay', { opacity: 0 });
-			// gsap.set('.sc-main .inner .title-wrap', { opacity: 0, y: 70 });
-			// gsap.set('.pc-header', { y: '-100%' });
+		ScrollTrigger.matchMedia({
+			'(min-width: 769px)': function () {
+				// loadingAni
+				// gsap.set('.sc-main .inner', { width: '20vw', height: '20vw', borderRadius: '200px', y: '50vw' });
+				// gsap.set('.sc-main .inner .overlay', { opacity: 0 });
+				// gsap.set('.sc-main .inner .title-wrap', { opacity: 0, y: 70 });
+				// gsap.set('.pc-header', { y: '-100%' });
 
-			gsap.timeline()
-				.to('.sc-main .inner', { y: 0, duration: 1, ease: 'power3.out' })
-				.addLabel('a')
-				.to('.sc-main .inner', { width: '100%', height: '100%', borderRadius: 0, duration: 1.5, ease: 'power3.out' }, 'a')
-				.to('.sc-main .overlay', { opacity: 0.7, duration: 0.5 }, 'a+=.7')
-				.to('.pc-header', { y: 0, duration: 0.5 }, 'a+=.9')
-				.to('.sc-main .inner .title-wrap', { opacity: 1, y: '-50%', duration: 0.7 }, 'a+=.9');
+				gsap.timeline()
+					.to('.sc-main .inner', { y: 0, duration: 1, ease: 'power3.out' })
+					.addLabel('a')
+					.to('.sc-main .inner', { width: '100%', height: '100%', borderRadius: 0, duration: 1.5, ease: 'power3.out' }, 'a')
+					.to('.sc-main .overlay', { opacity: 0.7, duration: 0.5 }, 'a+=.7')
+					.to('.pc-header', { y: 0, duration: 0.5 }, 'a+=.9')
+					.to('.sc-main .inner .title-wrap', { opacity: 1, y: '-50%', duration: 0.7 }, 'a+=.9');
 
-			// sc-brands
-			gsap.set('.sc-brands .text-area .title', { opacity: 0, y: 100 });
-			gsap.set('.sc-brands .text-area .wrap', { opacity: 0, y: 100 });
-			gsap.set('.sc-brands .text-area .more-link', { opacity: 0 });
+				// sc-brands
+				gsap.set('.sc-brands .text-area .title', { opacity: 0, y: 100 });
+				gsap.set('.sc-brands .text-area .wrap', { opacity: 0, y: 100 });
+				gsap.set('.sc-brands .text-area .more-link', { opacity: 0 });
 
-			gsap.set('.sc-brands .brands-group.b2 .img-area, .sc-brands .brands-group.b3 .img-area', { y: '100%' });
+				gsap.set('.sc-brands .brands-group.b2 .img-area, .sc-brands .brands-group.b3 .img-area', { y: '100%' });
 
-			const mainBrandsAni = gsap.timeline({
-				scrollTrigger: {
-					trigger: '.sc-brands',
-					start: 'top 0%',
-					end: '1000% -80%',
-					scrub: 3,
-					pin: true,
-				},
-			});
-			mainBrandsAni
-				.to({}, { duration: 1 })
-				.addLabel('a')
-				.to('.sc-brands .brands-group.b1 .text-area .title', { opacity: 1, y: 0, duration: 1 }, 'a')
-				.to('.sc-brands .brands-group.b1 .text-area .wrap', { opacity: 1, y: 0, duration: 1 }, 'a+=.03')
-				.to('.sc-brands .brands-group.b1 .text-area .more-link', { opacity: 1, duration: 1 }, 'a+=.03')
+				const mainBrandsAni = gsap.timeline({
+					scrollTrigger: {
+						trigger: '.sc-brands',
+						start: 'top 0%',
+						end: '1000% -80%',
+						scrub: 3,
+						pin: true,
+					},
+				});
+				mainBrandsAni
+					.to({}, { duration: 1 })
+					.addLabel('a')
+					.to('.sc-brands .brands-group.b1 .text-area .title', { opacity: 1, y: 0, duration: 1 }, 'a')
+					.to('.sc-brands .brands-group.b1 .text-area .wrap', { opacity: 1, y: 0, duration: 1 }, 'a+=.03')
+					.to('.sc-brands .brands-group.b1 .text-area .more-link', { opacity: 1, duration: 1 }, 'a+=.03')
 
-				.to({}, { duration: 2 })
-				.addLabel('b')
-				.to('.sc-brands .brands-group.b2', { zIndex: 13 }, 'b')
-				.to('.sc-brands .brands-group.b1 .text-area', { opacity: 0, duration: 0.6 }, 'b+=1')
-				.to('.sc-brands .brands-group.b2 .img-area', { y: 0, duration: 2.8 }, 'b+=2')
+					.to({}, { duration: 2 })
+					.addLabel('b')
+					.to('.sc-brands .brands-group.b2', { zIndex: 13 }, 'b')
+					.to('.sc-brands .brands-group.b1 .text-area', { opacity: 0, duration: 0.6 }, 'b+=1')
+					.to('.sc-brands .brands-group.b2 .img-area', { y: 0, duration: 2.8 }, 'b+=2')
 
-				.to('.sc-brands .brands-group.b2 .text-area .title', { opacity: 1, y: 0, duration: 2 }, 'b+=3.5')
-				.to('.sc-brands .brands-group.b2 .text-area .wrap', { opacity: 1, y: 0, duration: 2 }, 'b+=3.8')
-				.to('.sc-brands .brands-group.b2 .text-area .more-link', { opacity: 1, duration: 2 }, 'b+=3.8')
-				.to('.sc-brands .circle .num', { textContent: '2', duration: 0 }, 'b+=1.5')
+					.to('.sc-brands .brands-group.b2 .text-area .title', { opacity: 1, y: 0, duration: 2 }, 'b+=3.5')
+					.to('.sc-brands .brands-group.b2 .text-area .wrap', { opacity: 1, y: 0, duration: 2 }, 'b+=3.8')
+					.to('.sc-brands .brands-group.b2 .text-area .more-link', { opacity: 1, duration: 2 }, 'b+=3.8')
+					.to('.sc-brands .circle .num', { textContent: '2', duration: 0 }, 'b+=1.5')
 
-				.to({}, { duration: 2 })
-				.addLabel('d')
-				.to('.sc-brands .brands-group.b3', { zIndex: 15 }, 'd')
-				.to('.sc-brands .brands-group.b2 .text-area', { opacity: 0, duration: 0.6 }, 'd+=1')
-				.to('.sc-brands .brands-group.b3 .img-area', { y: 0, duration: 2.8 }, 'd+=2')
-				.to('.sc-brands .brands-group.b3 .text-area .title', { opacity: 1, y: 0, duration: 2 }, 'd+=3.5')
-				.to('.sc-brands .brands-group.b3 .text-area .wrap', { opacity: 1, y: 0, duration: 2 }, 'd+=3.8')
-				.to('.sc-brands .brands-group.b3 .text-area .more-link', { opacity: 1, duration: 2 }, 'd+=3.8')
+					.to({}, { duration: 2 })
+					.addLabel('d')
+					.to('.sc-brands .brands-group.b3', { zIndex: 15 }, 'd')
+					.to('.sc-brands .brands-group.b2 .text-area', { opacity: 0, duration: 0.6 }, 'd+=1')
+					.to('.sc-brands .brands-group.b3 .img-area', { y: 0, duration: 2.8 }, 'd+=2')
+					.to('.sc-brands .brands-group.b3 .text-area .title', { opacity: 1, y: 0, duration: 2 }, 'd+=3.5')
+					.to('.sc-brands .brands-group.b3 .text-area .wrap', { opacity: 1, y: 0, duration: 2 }, 'd+=3.8')
+					.to('.sc-brands .brands-group.b3 .text-area .more-link', { opacity: 1, duration: 2 }, 'd+=3.8')
 
-				.to('.sc-brands .circle .num', { textContent: '3', duration: 0 }, 'd+=1.5')
+					.to('.sc-brands .circle .num', { textContent: '3', duration: 0 }, 'd+=1.5')
 
-				.to({}, { duration: 2 });
+					.to({}, { duration: 2 });
 
-			// sc-menu
-			gsap.set('.sc-menu .title', { opacity: 0, x: 100 });
-			gsap.set('.sc-menu .desc', { opacity: 0, x: 100 });
-			gsap.set('.sc-menu .brand', { opacity: 0, y: 100 });
-			gsap.set('.sc-menu .menu-list', { opacity: 0, y: 100 });
+				// sc-menu
+				gsap.set('.sc-menu .title', { opacity: 0, x: 100 });
+				gsap.set('.sc-menu .desc', { opacity: 0, x: 100 });
+				gsap.set('.sc-menu .brand', { opacity: 0, y: 100 });
+				gsap.set('.sc-menu .menu-list', { opacity: 0, y: 100 });
 
-			const mainMenuAni = gsap.timeline({
-				scrollTrigger: {
-					trigger: '.sc-menu',
-					start: 'top center',
-					end: '50% center',
-					scrub: 5,
-				},
-			});
-			mainMenuAni
-				.addLabel('a')
-				.to('.sc-menu .title', { opacity: 1, x: 0, duration: 0.4 }, 'a')
-				.to('.sc-menu .desc', { opacity: 1, x: 0, duration: 0.4 }, 'a+=.03')
-				.addLabel('b')
-				.to('.sc-menu .first .brand', { opacity: 1, y: 0 }, 'b')
-				.to('.sc-menu .first .menu-list', { opacity: 1, y: 0 }, 'b')
-				.addLabel('c')
-				.to('.sc-menu .second .brand', { opacity: 1, y: 0 }, 'c')
-				.to('.sc-menu .second .menu-list', { opacity: 1, y: 0 }, 'c')
-				.addLabel('d')
-				.to('.sc-menu .third .brand', { opacity: 1, y: 0 }, 'd')
-				.to('.sc-menu .third .text', { opacity: 1, y: 0 }, 'd');
+				const mainMenuAni = gsap.timeline({
+					scrollTrigger: {
+						trigger: '.sc-menu',
+						start: 'top center',
+						end: '50% center',
+						scrub: 5,
+					},
+				});
+				mainMenuAni
+					.addLabel('a')
+					.to('.sc-menu .title', { opacity: 1, x: 0, duration: 0.4 }, 'a')
+					.to('.sc-menu .desc', { opacity: 1, x: 0, duration: 0.4 }, 'a+=.03')
+					.addLabel('b')
+					.to('.sc-menu .first .brand', { opacity: 1, y: 0 }, 'b')
+					.to('.sc-menu .first .menu-list', { opacity: 1, y: 0 }, 'b')
+					.addLabel('c')
+					.to('.sc-menu .second .brand', { opacity: 1, y: 0 }, 'c')
+					.to('.sc-menu .second .menu-list', { opacity: 1, y: 0 }, 'c')
+					.addLabel('d')
+					.to('.sc-menu .third .brand', { opacity: 1, y: 0 }, 'd')
+					.to('.sc-menu .third .text', { opacity: 1, y: 0 }, 'd');
 
-			// sc-contact
-			gsap.set('.sc-contact .contact, .sc-contact .contact-link', { opacity: 0 });
-			gsap.set('.sc-contact .desc, .sc-contact .title', { opacity: 0, y: 50 });
+				// sc-contact
+				gsap.set('.sc-contact .contact, .sc-contact .contact-link', { opacity: 0 });
+				gsap.set('.sc-contact .desc, .sc-contact .title', { opacity: 0, y: 50 });
 
-			const mainContactAni = gsap.timeline({
-				scrollTrigger: {
-					trigger: '.sc-contact',
-					start: 'top 68%',
-					end: '40% 68%',
-					scrub: 5,
-				},
-			});
-			mainContactAni
-				.to('.sc-contact .contact', { opacity: 1 })
-				.to('.sc-contact .desc', { opacity: 1, y: 0 })
-				.to('.sc-contact .title', { opacity: 1, y: 0 })
-				.to('.sc-contact .contact-link', { opacity: 1 });
-		},
+				const mainContactAni = gsap.timeline({
+					scrollTrigger: {
+						trigger: '.sc-contact',
+						start: 'top 68%',
+						end: '40% 68%',
+						scrub: 5,
+					},
+				});
+				mainContactAni
+					.to('.sc-contact .contact', { opacity: 1 })
+					.to('.sc-contact .desc', { opacity: 1, y: 0 })
+					.to('.sc-contact .title', { opacity: 1, y: 0 })
+					.to('.sc-contact .contact-link', { opacity: 1 });
+			},
 
-		'(max-width: 768px)': function () {
-			// loadingAni
-			gsap.set('.mob-header', { y: '-100%' });
+			'(max-width: 768px)': function () {
+				// loadingAni
+				gsap.set('.mob-header', { y: '-100%' });
 
-			const mainLoadingAni = gsap.timeline();
-			mainLoadingAni
-				.addLabel('a')
-				.to('.sc-main .inner', { opacity: 1 }, 'a')
+				const mainLoadingAni = gsap.timeline();
+				mainLoadingAni
+					.addLabel('a')
+					.to('.sc-main .inner', { opacity: 1 }, 'a')
 
-				.addLabel('b')
-				.to('.mob-header', { y: 0, duration: 0.5 }, 'b')
-				.to('.sc-main .inner .title-wrap', { opacity: 1, y: '-50%', duration: 0.7 }, 'b');
+					.addLabel('b')
+					.to('.mob-header', { y: 0, duration: 0.5 }, 'b')
+					.to('.sc-main .inner .title-wrap', { opacity: 1, y: '-50%', duration: 0.7 }, 'b');
 
-			// sc-menu
-			gsap.set('.sc-menu .title', { opacity: 0, y: 50 });
-			gsap.set('.sc-menu .desc', { opacity: 0, y: 50 });
-			gsap.set('.sc-menu .brand', { opacity: 0, y: 100 });
-			gsap.set('.sc-menu .menu-list', { opacity: 0, y: 100 });
+				// sc-menu
+				gsap.set('.sc-menu .title', { opacity: 0, y: 50 });
+				gsap.set('.sc-menu .desc', { opacity: 0, y: 50 });
+				gsap.set('.sc-menu .brand', { opacity: 0, y: 100 });
+				gsap.set('.sc-menu .menu-list', { opacity: 0, y: 100 });
 
-			const mainMenuAni = gsap.timeline({
-				scrollTrigger: {
-					trigger: '.sc-menu',
-					start: 'top 68%',
-					end: '50% 68%',
-					scrub: 5,
-				},
-			});
-			mainMenuAni
-				.addLabel('a')
-				.to('.sc-menu .title', { opacity: 1, y: 0, duration: 0.4 }, 'a')
-				.to('.sc-menu .desc', { opacity: 1, y: 0, duration: 0.4 }, 'a+=.03')
-				.addLabel('b')
-				.to('.sc-menu .first .brand', { opacity: 1, y: 0 }, 'b')
-				.to('.sc-menu .first .menu-list', { opacity: 1, y: 0 }, 'b')
-				.addLabel('c')
-				.to('.sc-menu .second .brand', { opacity: 1, y: 0 }, 'c')
-				.to('.sc-menu .second .menu-list', { opacity: 1, y: 0 }, 'c')
-				.addLabel('d')
-				.to('.sc-menu .third .brand', { opacity: 1, y: 0 }, 'd')
-				.to('.sc-menu .third .text', { opacity: 1, y: 0 }, 'd');
+				const mainMenuAni = gsap.timeline({
+					scrollTrigger: {
+						trigger: '.sc-menu',
+						start: 'top 68%',
+						end: '50% 68%',
+						scrub: 5,
+					},
+				});
+				mainMenuAni
+					.addLabel('a')
+					.to('.sc-menu .title', { opacity: 1, y: 0, duration: 0.4 }, 'a')
+					.to('.sc-menu .desc', { opacity: 1, y: 0, duration: 0.4 }, 'a+=.03')
+					.addLabel('b')
+					.to('.sc-menu .first .brand', { opacity: 1, y: 0 }, 'b')
+					.to('.sc-menu .first .menu-list', { opacity: 1, y: 0 }, 'b')
+					.addLabel('c')
+					.to('.sc-menu .second .brand', { opacity: 1, y: 0 }, 'c')
+					.to('.sc-menu .second .menu-list', { opacity: 1, y: 0 }, 'c')
+					.addLabel('d')
+					.to('.sc-menu .third .brand', { opacity: 1, y: 0 }, 'd')
+					.to('.sc-menu .third .text', { opacity: 1, y: 0 }, 'd');
 
-			// sc-contact
-			gsap.set('.sc-contact .contact, .sc-contact .contact-link', { opacity: 0 });
-			gsap.set('.sc-contact .desc, .sc-contact .title', { opacity: 0, y: 50 });
+				// sc-contact
+				gsap.set('.sc-contact .contact, .sc-contact .contact-link', { opacity: 0 });
+				gsap.set('.sc-contact .desc, .sc-contact .title', { opacity: 0, y: 50 });
 
-			const mainContactAni = gsap.timeline({
-				scrollTrigger: {
-					trigger: '.sc-contact',
-					start: 'top 70%',
-					end: '40% 70%',
-					scrub: 5,
-				},
-			});
-			mainContactAni
-				.to('.sc-contact .contact', { opacity: 1 })
-				.to('.sc-contact .desc', { opacity: 1, y: 0 })
-				.to('.sc-contact .title', { opacity: 1, y: 0 })
-				.to('.sc-contact .contact-link', { opacity: 1 });
-		},
+				const mainContactAni = gsap.timeline({
+					scrollTrigger: {
+						trigger: '.sc-contact',
+						start: 'top 70%',
+						end: '40% 70%',
+						scrub: 5,
+					},
+				});
+				mainContactAni
+					.to('.sc-contact .contact', { opacity: 1 })
+					.to('.sc-contact .desc', { opacity: 1, y: 0 })
+					.to('.sc-contact .title', { opacity: 1, y: 0 })
+					.to('.sc-contact .contact-link', { opacity: 1 });
+			},
 
-		all: function () {
-			// sc-about
-			gsap.set('.sc-about .title', { opacity: 0, y: 100 });
-			gsap.set('.sc-about .desc', { opacity: 0, x: -100 });
-			gsap.set('.sc-about .img-group', { opacity: 0, x: 100 });
-			const mainAboutAni = gsap.timeline({
-				scrollTrigger: {
-					trigger: '.sc-about',
-					start: 'top 60%',
-					end: '50% 60%',
-					scrub: 5,
-				},
-			});
-			mainAboutAni
-				.to('.sc-about .title', { opacity: 1, y: 0 })
-				.addLabel('a')
-				.to('.sc-about .desc', { opacity: 1, x: 0, duration: 1.5 }, 'a+=.5')
-				.to('.sc-about .img-group', { opacity: 1, x: 0, duration: 1.5 }, 'a+=.5');
-		},
+			all: function () {
+				// sc-about
+				gsap.set('.sc-about .title', { opacity: 0, y: 100 });
+				gsap.set('.sc-about .desc', { opacity: 0, x: -100 });
+				gsap.set('.sc-about .img-group', { opacity: 0, x: 100 });
+				const mainAboutAni = gsap.timeline({
+					scrollTrigger: {
+						trigger: '.sc-about',
+						start: 'top 60%',
+						end: '50% 60%',
+						scrub: 5,
+					},
+				});
+				mainAboutAni
+					.to('.sc-about .title', { opacity: 1, y: 0 })
+					.addLabel('a')
+					.to('.sc-about .desc', { opacity: 1, x: 0, duration: 1.5 }, 'a+=.5')
+					.to('.sc-about .img-group', { opacity: 1, x: 0, duration: 1.5 }, 'a+=.5');
+			},
+		});
 	});
 </script>
 {% endblock %}
