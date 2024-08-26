@@ -363,6 +363,7 @@
 		ScrollTrigger.matchMedia({
 			'(min-width: 769px)': function () {
 				// loadingAni
+				gsap.set('.header .pc-header', { y: '-100%' });
 				gsap.timeline()
 					.to('.sc-main .inner', { y: 0, duration: 1, ease: 'power3.out' })
 					.addLabel('a')
