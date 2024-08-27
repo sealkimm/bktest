@@ -62,53 +62,52 @@
 	</div>
 </header>
 <script>
-	window.onload = () => {
-		// 헤더 스크롤 이벤트
-		const $header = document.querySelector('.pc-header');
-		let lastScroll = 0;
+	// 헤더 스크롤 이벤트
+	const $header = document.querySelector('.pc-header');
+	let lastScroll = 0;
 
-		document.addEventListener('scroll', () => {
-			let currentScroll = window.scrollY;
+	document.addEventListener('scroll', () => {
+		let currentScroll = window.scrollY;
 
-			if (currentScroll > lastScroll && currentScroll > 50) {
-				$header.classList.add('active');
-			} else if (currentScroll < lastScroll) {
-				$header.classList.remove('active');
-			}
-			if (currentScroll < 883) {
-				$header.style.backgroundColor = '#384f31';
-			} else {
-				$header.style.backgroundColor = 'rgba(56, 79, 49, 0.9)';
-			}
-			lastScroll = currentScroll;
-		});
+		if (currentScroll > lastScroll && currentScroll > 50) {
+			$header.classList.add('active');
+		} else if (currentScroll < lastScroll) {
+			$header.classList.remove('active');
+		}
+		if (currentScroll < 883) {
+			$header.style.backgroundColor = '#384f31';
+		} else {
+			$header.style.backgroundColor = 'rgba(56, 79, 49, 0.9)';
+		}
+		lastScroll = currentScroll;
+	});
 
-		// nav active 효과
-		const currentUrl = window.location.pathname;
-		const $navItems = document.querySelectorAll('.nav .nav-item');
+	// nav active 효과
+	const currentUrl = window.location.pathname;
+	const $navItems = document.querySelectorAll('.nav .nav-item');
 
-		$navItems.forEach((item) => {
-			const link = item.querySelector('.nav-link').getAttribute('href');
-			if (currentUrl.includes(link)) {
-				item.classList.add('active');
-			}
-		});
+	$navItems.forEach((item) => {
+		const link = item.querySelector('.nav-link').getAttribute('href');
+		if (currentUrl.includes(link)) {
+			item.classList.add('active');
+		}
+	});
 
-		// mob nav.on 효과
-		const $mobHeader = document.querySelector('.mob-header');
-		const $mobMenu = $mobHeader.querySelector('.mob-header .mob-menu');
-		const $nav = $mobHeader.querySelector('.mob-header .nav');
-		const $btnClose = $mobHeader.querySelector('.mob-header .btn-close');
+	// mob nav.on 효과
+	const $mobHeader = document.querySelector('.mob-header');
+	const $mobMenu = $mobHeader.querySelector('.mob-header .mob-menu');
+	const $nav = $mobHeader.querySelector('.mob-header .nav');
+	const $btnClose = $mobHeader.querySelector('.mob-header .btn-close');
 
-		$mobMenu.addEventListener('click', () => {
-			$nav.classList.add('on');
-		});
-		$btnClose.addEventListener('click', () => {
-			$nav.classList.remove('on');
-		});
+	$mobMenu.addEventListener('click', () => {
+		$nav.classList.add('on');
+		console.log('dd');
+	});
+	$btnClose.addEventListener('click', () => {
+		$nav.classList.remove('on');
+	});
 
-		$navItems.forEach((item) => {
-			$nav.classList.remove('on');
-		});
-	};
+	$navItems.forEach((item) => {
+		$nav.classList.remove('on');
+	});
 </script>
