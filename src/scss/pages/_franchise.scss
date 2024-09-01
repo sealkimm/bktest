@@ -19,7 +19,7 @@
 			position: absolute;
 			top: 0;
 			left: 0;
-			background-color: rgba(0, 0, 0, 0.5);
+			background-color: rgba(0,0,0,.5);
 			@include size(100%, 100%);
 		}
 	}
@@ -49,7 +49,7 @@
 		.process-list {
 			display: grid;
 			gap: 28px;
-			grid-template-columns: repeat(4, 1fr);
+			grid-template-columns: repeat(4,1fr);
 
 			.process-item {
 				position: relative;
@@ -134,16 +134,14 @@
 			tbody {
 				th {
 					font-weight: normal;
-					border-right: 1px solid rgba(34, 34, 34, 0.2);
-					border-bottom: 2px solid rgba(34, 34, 34, 0.2);
+					border-right: 1px solid rgba(34,34,34,.2);
+					border-bottom: 2px solid rgba(34,34,34,.2);
 				}
 			}
 			td {
 				padding: 19px 15px 17px;
-				border-bottom: 2px solid rgba(34, 34, 34, 0.2);
+				border-bottom: 2px solid rgba(34,34,34,.2);
 				vertical-align: middle;
-				overflow: auto;
-				white-space: pre-wrap;
 				&.pd0 {
 					padding: 0;
 				}
@@ -153,11 +151,12 @@
 			}
 			.cont {
 				width: 37%;
-				border-right: 1px solid rgba(34, 34, 34, 0.2);
+				word-break: break-all;
+				border-right: 1px solid rgba(34,34,34,.2);
 			}
 			.cost {
 				width: 20%;
-				border-right: 1px solid rgba(34, 34, 34, 0.2);
+				border-right: 1px solid rgba(34,34,34,.2);
 				&.colspan {
 					text-align: center;
 					border-right: 0;
@@ -174,7 +173,7 @@
 				}
 			}
 			.sum {
-				background-color: rgba(56, 79, 49, 0.15);
+				background-color: rgba(56,79,49,.15);
 				.title,
 				.cont,
 				.cost,
@@ -210,7 +209,7 @@
 			}
 			.process-list {
 				gap: pxToVw3(90px);
-				grid-template-columns: repeat(1, 1fr);
+				grid-template-columns: repeat(1,1fr);
 				.process-item {
 					gap: pxToVw3(14px);
 					padding: pxToVw3(50px) 0;
@@ -297,7 +296,7 @@
 			}
 			.process-list {
 				gap: pxToVw(30px);
-				grid-template-columns: repeat(3, 1fr);
+				grid-template-columns: repeat(3,1fr);
 				.process-item {
 					gap: pxToVw(22px);
 					@include size(pxToVw(490px), pxToVw(540px));
@@ -313,7 +312,7 @@
 					}
 					&::after {
 						right: pxToVw(-80px);
-						transform: scale(0.7);
+						transform: scale(.7);
 					}
 					&:nth-child(4),
 					&:nth-child(8) {
