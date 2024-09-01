@@ -1,4 +1,5 @@
 .franchise-pg {
+	background-color: $sub-bg-color;
 	.banner-group {
 		@include size(100%, 550px);
 		position: relative;
@@ -23,7 +24,6 @@
 		}
 	}
 	.process-group {
-		background-color: $sub-bg-color;
 		@include textPadding();
 		.process-wrap {
 			max-width: 1300px;
@@ -99,6 +99,91 @@
 			}
 		}
 	}
+	.cost-group {
+		@include textPadding();
+		.cost-wrap {
+			max-width: 1300px;
+			padding: 60px 0 180px;
+			margin: 0 auto;
+			h3 {
+				font-size: 45px;
+				font-weight: 600;
+				margin-bottom: 44px;
+				text-align: center;
+			}
+		}
+		.small-txt {
+			display: block;
+			font-size: 16px;
+			font-weight: 600;
+			margin-bottom: 10px;
+			text-align: right;
+		}
+		.table-area {
+			width: 100%;
+			font-size: 17px;
+			text-align: center;
+			background-color: #fff;
+			border-top: 2px solid $black-color;
+			th {
+				padding: 19px 15px 17px;
+				border-bottom: 2px solid $black-color;
+				vertical-align: middle;
+			}
+
+			tbody {
+				th {
+					font-weight: normal;
+					border-right: 1px solid rgba(34,34,34,.2);
+					border-bottom: 2px solid rgba(34,34,34,.2);
+				}
+			}
+			td {
+				padding: 19px 15px 17px;
+				border-bottom: 2px solid rgba(34,34,34,.2);
+				vertical-align: middle;
+				&.pd0 {
+					padding: 0;
+				}
+			}
+			.title {
+				width: 23%;
+			}
+			.cont {
+				width: 37%;
+				border-right: 1px solid rgba(34,34,34,.2);
+			}
+			.cost {
+				width: 20%;
+				border-right: 1px solid rgba(34,34,34,.2);
+				&.colspan {
+					text-align: center;
+					border-right: 0;
+				}
+			}
+			.note {
+				width: 20%;
+			}
+			.green-text {
+				th,
+				td {
+					font-weight: 600;
+					color: $primary-color;
+				}
+			}
+			.sum {
+				background-color: rgba(56,79,49,.15);
+				.title,
+				.cont,
+				.cost,
+				.note {
+					padding: 40px 0 39px 0;
+					font-weight: 600;
+				}
+			}
+		}
+	}
+
 	@include mob-only {
 		.banner-group {
 			@include size(100%, pxToVw3(460px));
@@ -156,6 +241,33 @@
 							display: none;
 						}
 					}
+				}
+			}
+		}
+		.cost-group {
+			.cost-wrap {
+				padding: pxToVw3(60px) 0 pxToVw3(150px);
+
+				h3 {
+					padding: 0 15vw;
+					font-size: pxToVw3(60px);
+					margin-bottom: pxToVw3(88px);
+				}
+			}
+			.inner {
+				position: relative;
+				overflow-x: scroll;
+			}
+			.small-txt {
+				text-align: left;
+			}
+			.table-area {
+				width: 162%;
+				font-size: pxToVw3(30px);
+				table-layout: fixed;
+				th,
+				td {
+					padding: pxToVw3(19px) pxToVw3(18px) pxToVw3(17px);
 				}
 			}
 		}
@@ -217,6 +329,9 @@
 					}
 				}
 			}
+		}
+		.cost-group {
+			padding: 0 pxToVw(50px);
 		}
 	}
 }
