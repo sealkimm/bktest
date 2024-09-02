@@ -108,7 +108,7 @@
 			h3 {
 				font-size: 45px;
 				font-weight: 600;
-				margin-bottom: 44px;
+				margin-bottom: 30px;
 				text-align: center;
 			}
 		}
@@ -169,11 +169,14 @@
 				th,
 				td {
 					font-weight: 600;
-					color: $primary-color;
+					color: #62785b;
 				}
 			}
+			.red-text {
+				color: #a1272b;
+			}
 			.sum {
-				background-color: rgba(56,79,49,.15);
+				background-color: rgba(207,222,216,.5);
 				.title,
 				.cont,
 				.cost,
@@ -181,6 +184,9 @@
 					padding: 40px 0 39px 0;
 					font-weight: 600;
 				}
+			}
+			.sum2 {
+				background-color: rgba(244,222,188,.5);
 			}
 		}
 	}
